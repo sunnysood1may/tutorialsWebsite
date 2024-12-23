@@ -1,0 +1,15 @@
+<h2>Contact</h2>
+<div [formGroup]="form">
+	<div>
+		<label>
+      E-mail
+      <input type="email" formControlName="email" />
+    </label>
+	</div>
+
+  <div class="move-details__cargo__details container no-gutter error-yes">
+    <span class="grid53 error-message" *ngIf="(email && email.invalid)
+    && (email.touched)">This field is required</span>
+  </div>
+
+</div>

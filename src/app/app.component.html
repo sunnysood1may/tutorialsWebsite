@@ -1,0 +1,14 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <app-personal-data-form
+    (formReady)="addChildForm('personal', $event)"
+  ></app-personal-data-form>
+  <app-contact-form
+    (formReady)="addChildForm('contact', $event)"
+  ></app-contact-form>
+
+  <div>
+    <button type="submit" [disabled]="form.invalid">Submit</button>
+  </div>
+</form>
+
+<pre>Form Values: {{form.value | json}}</pre>
